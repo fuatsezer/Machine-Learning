@@ -107,5 +107,6 @@
 #### Types of deletions
 1. Pairwise deletion
 2. Listwise deletion
+
 Note: Used when the values are MCAR
 
