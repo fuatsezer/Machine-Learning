@@ -148,10 +148,8 @@ Note: Used when the values are MCAR
 #### Forward and Backward Imputation
 
 ```python
-  # forward fill
-  airquality.fillna(method="ffill",inplace=True)
-  # backward fill
-  airquality.fillna(method="bfill",inplace=True)
+  airquality.fillna(method="ffill",inplace=True) # forward fill
+  airquality.fillna(method="bfill",inplace=True) # backward fill
 ```
 #### Imputing with Interpolation
 * The `.interpolate()` method extends the sequence of values to the missing values
@@ -160,5 +158,11 @@ Note: Used when the values are MCAR
   * `'quadratic'`
   * `'nearest'`
 
+
+```python
+  airquality.interpolate(method="linear",inplace=True) # linear
+  airquality.interpolate(method="quadratic",inplace=True) # quadratic
+  airquality.interpolate(method="nearest",inplace=True) # nearest
+```
 
 
