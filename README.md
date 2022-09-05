@@ -110,3 +110,55 @@
 
 Note: Used when the values are MCAR
 
+### Imputation Techniques
+#### Basic Imputation Techniques
+#### Mean Imputation
+
+```python
+  from sklearn.impute import SimpleImputer
+  mean_imputer = SimpleImputer(strategy="mean")
+  diabetes.iloc[:,:] = mean_imputer.fit_transform(diabetes)
+```
+
+#### Median Imputation
+
+```python
+  from sklearn.impute import SimpleImputer
+  median_imputer = SimpleImputer(strategy="median")
+  diabetes.iloc[:,:] = median_imputer.fit_transform(diabetes)
+```
+
+
+#### Mode Imputation
+
+```python
+  from sklearn.impute import SimpleImputer
+  mode_imputer = SimpleImputer(strategy="most_frequent")
+  diabetes.iloc[:,:] = mode_imputer.fit_transform(diabetes)
+```
+
+#### Imputing a constant
+
+```python
+  from sklearn.impute import SimpleImputer
+  constant_imputer = SimpleImputer(strategy="constant", fill_value=0)
+  diabetes.iloc[:,:] = constant_imputer.fit_transform(diabetes)
+```
+### Time Series Imputation
+#### Forward and Backward Imputation
+
+```python
+  # forward fill
+  airquality.fillna(method="ffill",inplace=True)
+  # backward fill
+  airquality.fillna(method="bfill",inplace=True)
+```
+#### Imputing with Interpolation
+* The `.interpolate()` method extends the sequence of values to the missing values
+* The attribute method in `.interpolate()` can be set to
+  * `'linear'` 
+  * `'quadratic'`
+  * `'nearest'`
+
+
+
