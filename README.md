@@ -165,4 +165,54 @@ Note: Used when the values are MCAR
   airquality.interpolate(method="nearest",inplace=True) # nearest
 ```
 
+### Advanced Imputation Techniques
+
+#### K-Nearest Neighbor (KNN) Imputation
+* Select K nearest or similar data points using all the non-missing features
+* Take average of the selected data points to fill in the missing feature
+
+<img src="https://machinelearningknowledge.ai/wp-content/uploads/2018/08/KNN-Classification.gif" width="75%" height="75%">
+
+
+```python
+  from fancyimpute import KNN
+  knn_imputer = KNN()
+  diabetes_knn = diabetes.copy(deep=True)
+  diabetes_knn.iloc[:,:] = knn_imputer.fit_transform(diabetes_knn)
+```
+#### Multiple Imputations by Chained Equations (MICE)
+* Perform multiple regressions over random sample of the data
+* Take average of the multiple regression values
+* Impute the missing feature value for the data point
+
+```python
+  from fancyimpute import IterativeImputer
+  MICE_imputer = IterativeImputer()
+  diabetes_MICE = diabetes.copy(deep=True)
+  diabetes_MICE.iloc[:,:] = MICE_imputer.fit_transform(diabetes_MICE)
+```
+
+### Imputing Categorical Values
+
+<img src="https://womaneng.com/wp-content/uploads/2018/09/onehotencoding.jpg" width="75%" height="75%">
+
+#### Imputing with KNN
+
+
+```python
+  users_KNN_imputed = users.copy(deep=True)
+  # Create MICE imputer
+  KNN_imputer = KNN()
+  users_KNN_imputed.iloc[:,:] = np.round(KNN_imputer.fit_transform(imputed))
+  
+  for col in imputed:
+    reshaped_col = imputed[col].values.reshape(-1, 1)
+    users_KNN_imputed[col] = ordinal_enc[col].inverse_transform(reshaped_col)
+```
+
+
+
+
+
+
 
