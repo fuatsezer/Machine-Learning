@@ -11,10 +11,14 @@ $\beta_{0}$ ve $\beta_{1}$ tahmin etmek için eğitim verileri kullanılır. Bu 
 $\hat{y}$, X=x iken Y'nin tahminini gösterir.Burada bilinmeyen bir parametre ve katsayı için tahmin edilen değeri belirtmek için şapka ( $\hat{}$ ) sembolü kullanılır.
 
 ## Estimating the Coefficient
-Pratikte $\beta_{0}$ ve $\beta_{1}$ bilinmiyor, dolayısıyla tahminlerde bulunmadan önce katsayıları tahmin etmek için verileri kullanmalıyız. Amacımız en küçük kareler kriterini minimum yapacak katsayıları katsayıları bulmaktır. 
-```math
-ith \; residual \; e_{i} = y_{i} - \hat{y_{i}} 
-```
-```math
-Residual \; sum \; of \; square \; RSS = e_{1}^{2}
-```
+Pratikte $\beta_{0}$ ve $\beta_{1}$ bilinmiyor, dolayısıyla tahminlerde bulunmadan önce katsayıları tahmin etmek için verileri kullanmalıyız. Amacımız en küçük kareler kriterini minimum yapacak katsayıları katsayıları bulmaktır.
+
+![svg](https://github.com/fuatsezer/Machine-Learning/assets/63423939/9f5e7663-a1ba-4642-b414-9dbe9c775c0f)
+
+![svg](https://github.com/fuatsezer/Machine-Learning/assets/63423939/0d9a6297-708b-4976-82f8-b336e371f829)
+
+Yukarıdaki tabloda $\hat{\beta_{0}}$ = 7.03 ve $\hat{\beta_{1}}$ = 0.0475 dir. Bu da şunu ifade eder;
+* Girdi değişkenindeki her 1000 birimlik artış çıktı değişkeninin tahmininde 47.5'lik bir artışa sebep olur.
+* Girdi değişkeni 0 değerini aldığında çıktı değişkeni için tahminimiz ortalama 7.03 birimdir.
+
+![111](https://github.com/fuatsezer/Machine-Learning/assets/63423939/aafce224-2a33-42ee-9d0f-7cbb2f36dd2c)
