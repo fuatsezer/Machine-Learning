@@ -39,7 +39,7 @@ Residual \; sum \; of \; square \; RSS = e_{1}^2 + e_{2}^2 + ........ + e_{i}^2
 
 ![svg](https://github.com/fuatsezer/Machine-Learning/assets/63423939/0d9a6297-708b-4976-82f8-b336e371f829)
 
-Kod tarafında SimpleLinearRegression sınıfımıza fit fonksiyonunu ekliyoruz ve bize katsayılar için yorumları regplotu ,residualsleri ve RSS değerini döndürüyor.
+Kod tarafında SimpleLinearRegression sınıfımıza fit fonksiyonunu ekliyoruz ve bize katsayılar için yorumları regplotu ,artıkları (residuals) ve RSS değerini döndürüyor.
 
 ```python
     def fit(self):
@@ -74,7 +74,7 @@ Kod tarafında SimpleLinearRegression sınıfımıza fit fonksiyonunu ekliyoruz 
 
 
 Yukarıdaki grafikte $\hat{\beta_{0}}$ = 7.03 ve $\hat{\beta_{1}}$ = 0.05 dir. Bu da şunu ifade eder;
-* Girdi değişkenindeki her 1000 birimlik artış çıktı değişkeninin tahmininde 55'lik bir artışa sebep olur.
+* Girdi değişkenindeki her 1000 birimlik artış çıktı değişkeninin tahmininde 50'lik bir artışa sebep olur.
 * Girdi değişkeni 0 değerini aldığında çıktı değişkeni için tahminimiz ortalama 6.97 birimdir.
 
 
@@ -89,9 +89,30 @@ Eğer f doğrusal bir fonksiyonla yaklaşık olarak hesaplanacaksa, bu ilişki �
 * $\beta_{1}$ eğimdir, X'teki 1 birimlik artış ile Y'deki ortalama artıştır.
 * Genellikle $\epsilon$'nin x'ten bağımsız olduğunu varsayarız. $\epsilon$ ortalaması sıfır olan bir normal dağılımdan türetilmiştir.
 
-$\beta_{0}$ ve $\beta_{1}$'in standart hataları aşağıdaki gibidir.
+Katsayıların tahmininin doğruluğunu incelemek için katsayıların standart hatalarına, %95 güven aralıklarına ve katsayıların sıfıra eşitliğinin kontrol edildiği hipotez testine bakabiliriz. 
 
+$\beta_{0}$ ve $\beta_{1}$'in standart hataları aşağıdaki formüllerle hesaplanır.
 
+![svg](https://github.com/fuatsezer/Machine-Learning/assets/63423939/8d65e788-87ff-47aa-b365-19942b7b3832)
+
+![svg](https://github.com/fuatsezer/Machine-Learning/assets/63423939/2758509f-bb8d-450d-8091-e4055e16c625)<?xml version='1.0' encoding='UTF-8'?>
+
+$\sigma^2 = Var(\epsilon)$
+
+Bu formüllerin geçerli olabilmesi için her gözlem için artıkların ($\epsilon_i$) varyanslarının sabit ve uncorrelated olması lazım (otokorelasyon).
+
+```math
+RSE = \sqrt{\frac{RSS}{(n - 2}}
+```
+
+Güven aralıklarını hesaplamak için standart hatalar kullanılabilir. %95 güven aralığı, %95 olasılıkla , aralığın  parametrenin gerçek bilinmeyen değeri içereceğini söyler. $\beta_{1}$ ve $\bta_{0}$ için güven aralığı:
+
+```math
+$\hat{\beta_{1}}$ \pm 2. SE(\hat{\beta_{1}})
+```
+```math
+$\hat{\beta_{0}}$ \pm 2. SE(\hat{\beta_{0}})
+```
 
 
 
