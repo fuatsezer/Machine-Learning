@@ -114,6 +114,17 @@ Güven aralıklarını hesaplamak için standart hatalar kullanılabilir. %95 g�
 \hat{\beta_{0}} \pm 2. SE(\hat{\beta_{0}})
 ```
 
+$\beta_{0}$'ın güven aralığı [6.130,7.935] ve $\beta_1$ 'in [0.042, 0.053] olsun.
+* Bu durumda X = 0 durumunda çıktı değişkeni ortalama olarak 6.130 ile 7.935 arasında bir değer alacağı sonucuna varırız.
+* Ayrıca X teki her 1000 birimlik artış y de ortalama 42ile 53 birimlik bir artış olacaktır.
+
+Standart hatalar, katsayılar üzerinde hipotez testi yapmak içinde kullanılır
+* $H_0$: There is no relationship between X and Y ($\beta_1$ = 0)
+* $H_a$: There is some relationship between X and Y ($\beta_1$ $\neq$ 0)
+
+* Uygulamada bir t istatistiği hesaplarız
+
+![svg](https://github.com/fuatsezer/Machine-Learning/assets/63423939/0026ed2b-92a2-4d64-9e87-0e0e17fd4700)
 
 
 
