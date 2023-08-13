@@ -126,6 +126,10 @@ Standart hatalar, katsayılar üzerinde hipotez testi yapmak içinde kullanılı
 
 ![svg](https://github.com/fuatsezer/Machine-Learning/assets/63423939/0026ed2b-92a2-4d64-9e87-0e0e17fd4700)
 
+| Örnek Tablo        | Coefficient           | Std.error  | t-statistic   | p-value
+| ------------- |:-------------:| -----:| -----:| -----:|
+| intercept      | $\beta_0$ = 7.0325 | 0.4578 | 15.36 | $${\color{red}<0.0001}$$
+| X      | $\beta_1$ = 0.0475 | 0.0027 | 17.67 | $${\color{red}<0.0001}$$
 
-
+Burada p değeri <0.005'den  küçük olduğu için sıfır hipotezini reddediyoruz ve $\beta_1 \neq 0$ ve $\beta_0 \neq 0$ sonucuna varıyoruz.
 
