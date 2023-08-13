@@ -105,13 +105,13 @@ Bu formüllerin geçerli olabilmesi için her gözlem için artıkların ($\epsi
 RSE = \sqrt{\frac{RSS}{(n - 2}}
 ```
 
-Güven aralıklarını hesaplamak için standart hatalar kullanılabilir. %95 güven aralığı, %95 olasılıkla , aralığın  parametrenin gerçek bilinmeyen değeri içereceğini söyler. $\beta_{1}$ ve $\bta_{0}$ için güven aralığı:
+Güven aralıklarını hesaplamak için standart hatalar kullanılabilir. %95 güven aralığı, %95 olasılıkla , aralığın  parametrenin gerçek bilinmeyen değeri içereceğini söyler. $\beta_{1}$ ve $\beta_{0}$ için güven aralığı:
 
 ```math
-$\hat{\beta_{1}}$ \pm 2. SE(\hat{\beta_{1}})
+\hat{\beta_{1}} \pm 2. SE(\hat{\beta_{1}})
 ```
 ```math
-$\hat{\beta_{0}}$ \pm 2. SE(\hat{\beta_{0}})
+\hat{\beta_{0}} \pm 2. SE(\hat{\beta_{0}})
 ```
 
 
