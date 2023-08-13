@@ -28,14 +28,14 @@ Residual \; sum \; of \; square \; RSS = e_{1}^2 + e_{2}^2 + ........ + e_{i}^2
 
 ![svg](https://github.com/fuatsezer/Machine-Learning/assets/63423939/0d9a6297-708b-4976-82f8-b336e371f829)
 
-![111](https://github.com/fuatsezer/Machine-Learning/assets/63423939/4075b958-5645-4bca-bb36-44b78a039b39)
+
 
 
 Yukarıdaki tabloda $\hat{\beta_{0}}$ = 6.97 ve $\hat{\beta_{1}}$ = 0.055 dir. Bu da şunu ifade eder;
 * Girdi değişkenindeki her 1000 birimlik artış çıktı değişkeninin tahmininde 55'lik bir artışa sebep olur.
 * Girdi değişkeni 0 değerini aldığında çıktı değişkeni için tahminimiz ortalama 6.97 birimdir.
 
-![111](https://github.com/fuatsezer/Machine-Learning/assets/63423939/aafce224-2a33-42ee-9d0f-7cbb2f36dd2c)
+
 
 ## Katsayı Tahminlerinin Doğruluğunu Test Etme
 
@@ -43,3 +43,15 @@ Eğer f doğrusal bir fonksiyonla yaklaşık olarak hesaplanacaksa, bu ilişki �
  ```math
   Y = \beta_{0} + \beta_{1} X + \epsilon
 ```
+* Burada $\beta_{0}$ intercept termdür, yani X=0 iken Y'nin beklenen değeridir.
+* $\beta_{1}$ eğimdir, X'teki 1 birimlik artış ile Y'deki ortalama artıştır.
+* Genellikle $\epsilon$'nin x'ten bağımsız olduğunu varsayarız. $\epsilon$ ortalaması sıfır olan bir normal dağılımdan türetilmiştir.
+
+$\beta_{0}$ ve $\beta_{1}$'in standart hataları aşağıdaki gibidir.
+
+
+
+
+
+
+
