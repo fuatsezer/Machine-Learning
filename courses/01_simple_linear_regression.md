@@ -10,6 +10,17 @@ $\beta_{0}$ ve $\beta_{1}$ tahmin etmek için eğitim verileri kullanılır. Bu 
 ```
 $\hat{y}$, X=x iken Y'nin tahminini gösterir.Burada bilinmeyen bir parametre ve katsayı için tahmin edilen değeri belirtmek için şapka ( $\hat{}$ ) sembolü kullanılır.
 
+Kod tarafında içersine veri setini, girdi ve çıktı değişkeninin özniteliğini alan bir sınıf oluşturuyoruz:
+
+```python
+class SimpleLinearRegression():
+    def __init__(self,dataframe,input_parameter, output_parameter):
+
+        self.dataframe = dataframe
+        self.input_parameter = input_parameter
+        self.output_parameter = output_parameter
+```
+
 ## Estimating the Coefficient
 Pratikte $\beta_{0}$ ve $\beta_{1}$ bilinmiyor, dolayısıyla tahminlerde bulunmadan önce katsayıları tahmin etmek için verileri kullanmalıyız. Amacımız en küçük kareler kriterini minimum yapacak katsayıları katsayıları bulmaktır.
 
@@ -28,10 +39,41 @@ Residual \; sum \; of \; square \; RSS = e_{1}^2 + e_{2}^2 + ........ + e_{i}^2
 
 ![svg](https://github.com/fuatsezer/Machine-Learning/assets/63423939/0d9a6297-708b-4976-82f8-b336e371f829)
 
+Kod tarafında SimpleLinearRegression sınıfımıza fit fonksiyonunu ekliyoruz ve bize katsayılar için yorumları regplotu ,residualsleri ve RSS değerini döndürüyor.
+
+```python
+    def fit(self):
+        df = self.dataframe
+        X = df[[self.input_parameter]]
+        y = df[[self.output_parameter]]
+        lr = LinearRegression()
+        model = lr.fit(X, y)
 
 
+        g = sns.regplot(x=df[input_parameter], y=df[output_parameter], scatter_kws={'color': 'r', 's': 9})
+        g.set_title(
+            f"Model Function: {output_parameter} = {round(float(model.intercept_[0]), 2)}+ {round(float(model.coef_[0]), 2)}*{input_parameter}",
+            fontsize=20, fontweight='bold')
+        g.set_ylabel(f"{output_parameter}", fontsize=20)
+        g.set_xlabel(f"{input_parameter}", fontsize=20);
 
-Yukarıdaki tabloda $\hat{\beta_{0}}$ = 6.97 ve $\hat{\beta_{1}}$ = 0.055 dir. Bu da şunu ifade eder;
+        y_pred = model.predict(X)
+        residual = (y - y_pred)
+        print(f"""
+            1) For each 1 unit increase in  {input_parameter} variable there will be an average increase in {output_parameter} variable is {round(float(model.coef_[0]), 2)} units.
+            2) When {input_parameter} variable is 0 then  {output_parameter} variable will on average is {round(float(model.intercept_[0]), 2)} units.
+            3) Residual sum of squares (RSS) = {round((residual**2).sum()[0],2)}
+        
+        """)
+        return residual
+```
+![111](https://github.com/fuatsezer/Machine-Learning/assets/63423939/fc90a848-efac-4a5b-8eba-4e6eb1521794)
+
+
+![ε (1)](https://github.com/fuatsezer/Machine-Learning/assets/63423939/68005f31-46a2-4502-84ca-a40f08d74628)
+
+
+Yukarıdaki grafikte $\hat{\beta_{0}}$ = 7.03 ve $\hat{\beta_{1}}$ = 0.05 dir. Bu da şunu ifade eder;
 * Girdi değişkenindeki her 1000 birimlik artış çıktı değişkeninin tahmininde 55'lik bir artışa sebep olur.
 * Girdi değişkeni 0 değerini aldığında çıktı değişkeni için tahminimiz ortalama 6.97 birimdir.
 
