@@ -101,9 +101,7 @@ $\sigma^2 = Var(\epsilon)$
 
 Bu formüllerin geçerli olabilmesi için her gözlem için artıkların ($\epsilon_i$) varyanslarının sabit ve uncorrelated olması lazım (otokorelasyon).
 
-```math
-RSE = \sqrt{\frac{RSS}{(n - 2}}
-```
+
 
 Güven aralıklarını hesaplamak için standart hatalar kullanılabilir. %95 güven aralığı, %95 olasılıkla , aralığın  parametrenin gerçek bilinmeyen değeri içereceğini söyler. $\beta_{1}$ ve $\beta_{0}$ için güven aralığı:
 
@@ -132,4 +130,32 @@ Standart hatalar, katsayılar üzerinde hipotez testi yapmak içinde kullanılı
 | X      | $\beta_1$ = 0.0475 | 0.0027 | 17.67 | $${\color{red}<0.0001}$$
 
 Burada p değeri <0.005'den  küçük olduğu için sıfır hipotezini reddediyoruz ve $\beta_1 \neq 0$ ve $\beta_0 \neq 0$ sonucuna varıyoruz.
+
+## Modelin Doğruluğunun değerlendirilmesi
+$H_0$'ı reddettikten sonra modelin verilere ne ölçüde uyduğunu bilmektir. Bunun içinde 3 metrik kullanırız. RSE (Residual Standard error), $R^2$ İSTATİSTİĞİ VE F-istatistiği
+| Örnek Tablo        | Değer | 
+| ------------- |:-------------:|
+| RSE      | 3.26 |
+| $R^2$      | 0.612 | 
+| F-statistic    | 312.1 |
+
+## Residual Standard Error
+Modelde her gözlem ile ilişkili bir hata terimi olduğunu unutmayın. RSE gerçek yanıt değişkeni değerlerinin gerçek regresyon çizgisinden sapacağı ortalama miktardır. Aşağıdaki formül ile hesaplanır.
+
+```math
+RSE = \sqrt{\frac{RSS}{(n - 2}}
+```
+
+Örnek tabloda RSE 3.26'dır. Yeni yanıt değişkeni değerleri gerçek regresyon çizgisinden ortalama olarak yaklaşık 3.260 birim sapmıştır. Bu kabul edilebilir bir değer midir? yanıt değişkeninin ortalaması 14000'dir. Ve dolayısıyla **yüzde hatası 3.260/14000= %23 tür.** RSE,modelin verilere uyumsuzluğunun bir ölçüsüdür.
+
+## $R^2 Statistic$
+
+$R^2$ istatistiği alternatif bir uyum ölçüsü sağlar. Bir oran açıklanan varyans oranı şeklini alır ve bu nedenle her zaman 0 ile 1 arasında bir değer alır ve Y ölçeğinden bağımsızdır $R^2$'nin formülü şe şekildedir:
+
+```math
+R^2 = \frac{TSS - RSS}{TSS} = 1 - \frac{RSS}{TSS}
+```
+TSS yanıt değişkenindeki toplam varyansı ölçer ve regresyon gerçekleşmeden önce yanıt değişkenindeki varolan değişkenlik miktarı olarak düşünülebilir. Tersine RSS, regresyon gerçekleştirildikten sonra açıklanmayan değişkenlık miktarını ölçer. Dolayısıyla TSS - RSS regresyon gerçekleştirilerek yanıt değişkenindeki açıklanan değişkenlik miktarını ölçer. **$R^2$, Y'deki X kullanılarak açıklanabilecek değişkenlik miktarını ölçer.1'e yakın bir $R^2$ değeri yanıttaki değişkenliğin büyük bir kısmının regresyon ile açıklandığını gösterir.** Örnek tabloda $R^2$ değeri 0.61'idi ve bu nedenle yanıt değişkenindeki değişkenliğin üçte ikisi X kullanılarak yapılan doğrusal regresyonla açıklanabiliyor. Basit lineer regresyonda $R^2=r^2$ dir.
+
+
 
