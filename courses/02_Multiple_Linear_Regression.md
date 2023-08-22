@@ -22,7 +22,7 @@ Parametreler, basit doğrusal regresyon bağlamında gördüğümüz aynı en k�
 ```math
 RSS = \sum_{i=1}^{n} (y_i - \hat{y_i})^2
 ```
- | Coefficient | Std. error | t-statistic | p-value 
+ Term | Coefficient | Std. error | t-statistic | p-value 
 --- | --- | --- | --- |--- 
 Intercept | 2.939 | 0.3119 | 9.42 | <0.0001 
 TV | 0.046 | 0.0014 | 32.81 | <0.0001 
