@@ -31,4 +31,20 @@ newspaper | -0.001 | 0.0059 | -0.18 | 0.8599
 
 * TV katsayısı, gazete ve radyo sabit tutulurken TV harcamalarının 1000$ artmasıyla ilişkili ürün satışlarındaki (çıktı değişkeni) ortalama artışı temsil etmektedir. 
 
+## Is There a Relationship Between the Response and Predictors?
+
+p değişkenli çoklu doğrusal regresyon ortamında, tüm değişkenlerin çıktı değişkeni ile ilişkili olup olmadığını sormamız gereklidir. Bunun için hipotez testi kullanıyoruz. Hipotezler aşağıdaki gibidir.
+
+$H_0: \beta_1 = \beta_2 = ..... = \beta_p = 0$
+
+
+$H_a$ : at least one $\beta_j$ is non-zero
+
+Hipotez testinin F istatistiği aşağıdaki gibi hesaplanır.
+```math
+F = \frac{(TSS - RSS) / p}{RSS/ (n - p - 1)}
+```
+
+
+
 
