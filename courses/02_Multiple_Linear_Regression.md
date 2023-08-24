@@ -29,6 +29,6 @@ TV | 0.046 | 0.0014 | 32.81 | <0.0001
 radio | 0.189 | 0.0086 | 21.89 | <0.0001 
 newspaper | -0.001 | 0.0059 | -0.18 | 0.8599 
 
-TV katsayısı, gazete ve radyo sabit tutulurken TV harcamalarının 1000$ artmasıyla ilişkili ürün satışlarındaki (çıktı değişkeni) ortalama artışı temsil etmektedir. 
+* TV katsayısı, gazete ve radyo sabit tutulurken TV harcamalarının 1000$ artmasıyla ilişkili ürün satışlarındaki (çıktı değişkeni) ortalama artışı temsil etmektedir. 
 
 
