@@ -51,6 +51,25 @@ Bu çalışma p'nin n'den küçük olduğu durumlarda işe yarar
 
 ## Deciding on Important Variables
 
+Çoklu regresyon analizindeki ilk adım, F istatistiğini hesaplamak ve ilgili p değerini incelemektir. Bu p-değerine dayanarak girdilerden en az birinin yanıtlailişkili olduğu sonucuna varırsak, bunun hangisi yada hangileri olduğunu bilmeliyiz.Bireysel p değerlerine bakılabilir. Eğer p büyükse bazı yanlış keşifler yapmamız muhtemeldir.
+
+Tüm girdi değişkenleri yanıt değişkeni ile ilişkili olması mümkündür, ancak yanıt değişkeninin yanlızca girdilerin bir alt kümesi ile ilişkili olduğu durum daha sıktır.Yalnızca bu yordayıcıları içeren tek bir modele uymak için hangi yordayıcıların yanıtla ilişkili olduğunu belirleme görevine değişken seçimi denir.
+
+Girdi değişkenlerinin bütün kombinasyonları için model kurarız. Hangi modelin en iyisi olduğunu bilmek için çeşitli istatistikler kullanırız. Bunlar **Mallow's Cp, Akaike bilgi kriteri (AIC), Bayesian bilgi kriteri (BIC) ve adjusted $R^2$** dir. Ayrıca, kalıpları araştırmak amacıyla artıklar gibi çeşitli model çıktılarının grafiğini çizerek hangi modelin en iyi olduğunu da belirleyebiliriz.
+
+Ne yazık ki, p değişkenin alt kümelerini içeren toplam $2^p$ modeli vardır. Bu, orta düzeyde p için bile, yordayıcıların olası her alt kümesini denemenin olanaksız olduğu anlamına gelir.Bunun için farklı seçim yöntemleri deneriz.
+
+### Forward Selection
+
+Sıfır modeliyle başlıyoruz; bu model, bir kesme noktası içeren ancak girdi içermeyen bir modeldir.Daha sonra p adet basit doğrusal regresyonu yerleştiririz ve boş modele en düşük RSS ile sonuçlanan değişkeni ekleriz.Daha sonra bu modele yeni iki değişkenli model için en düşük RSS ile sonuçlanan değişkeni ekliyoruz. Bu yaklaşıma bazı durdurma kuralları sağlanana kadar devam edilir.
+### Backward selection
+Modeldeki tüm değişkenlerle başlıyoruz ve en büyük p değerine sahip değişkeni, yani istatistiksel açıdan en az anlamlı olan değişkeni atıyoruz.Yeni (p - 1) değişken modeli uygun hale getirilir ve en büyük p değerine sahip değişken çıkarılır. Bu prosedür bir durdurma kuralına ulaşılana kadar devam eder. Örneğin, geri kalan tüm değişkenlerin p değeri belirli bir eşiğin altında olduğunda durabiliriz.
+### Mixed selection
+Bu backward ve forward selectionların birleşimidir.Modelde hiçbir değişken olmadan başlıyoruz ve ileri seçim seçiminde olduğu gibi en iyi uyumu sağlayan değişkeni ekliyoruz. Değişkenleri tek tek eklemeye devam ediyoruz. Elbette, Reklam örneğinde de belirttiğimiz gibi, modele yeni tahminciler eklendikçe değişkenlerin p değerleri daha da büyüyebilir.Dolayısıyla herhangi bir noktada modeldeki değişkenlerden birinin p değeri belirli bir eşiğin üzerine çıkarsa o değişkeni modelden çıkarırız. Modeldeki tüm değişkenler yeterince düşük bir p değerine sahip olana ve modelin dışındaki tüm değişkenler, modele eklenirse büyük bir p değerine sahip olana kadar bu ileri ve geri adımları gerçekleştirmeye devam ederiz.
+
+## Model Fit
+
+
 
 
 
