@@ -45,6 +45,12 @@ Hipotez testinin F istatistiği aşağıdaki gibi hesaplanır.
 F = \frac{(TSS - RSS) / p}{RSS/ (n - p - 1)}
 ```
 
+Bu örnekte F istatistiği 570'dir. Bu 1'den çok büyüktür bu yüzden $H_0$'ı reddederiz ve bir ilişkinin olduğunu söyleyebiliriz. Girdi değişkenlerinden en az birinin çıktı değişkeni ile ilişkilidir.
+
+Bu çalışma p'nin n'den küçük olduğu durumlarda işe yarar
+
+## Deciding on Important Variables
+
 
 
 
